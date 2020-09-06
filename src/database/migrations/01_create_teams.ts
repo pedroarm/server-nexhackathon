@@ -2,9 +2,8 @@ import Knex from 'knex'
 
 export async function up(knex: Knex) {
   return knex.schema.createTable('teams', (table) => {
-    table.increments('id').primary();
+    table.increments('id_teams').primary();
     table.string('title').notNullable();
-    table.integer('peoples').notNullable()
   })
 }
 
