@@ -5,9 +5,9 @@ module.exports = {
   connection: {
       host : 'mysql669.umbler.com',
       port : 41890,
-      user : 'nextestdb',
-      password : 'n12345678',
-      database : 'nextest'
+      user : 'nexdb',
+      password : 'uAdODK7tWYz',
+      database : 'nexhacka'
   },
   migrations: {
     directory: path.resolve(__dirname, 'src', 'database', 'migrations'),
