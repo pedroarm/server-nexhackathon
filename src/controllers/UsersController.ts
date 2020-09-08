@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import db from '../database/connection';
+import bcrypt from 'bcryptjs'
 
 export default class UsersController {
 
@@ -19,6 +20,9 @@ export default class UsersController {
       email,
       password,
     } = request.body;
+
+    var salt = bcrypt.genSaltSync(10)
+    var hash = bcrypt.hashSync(password, salt)
  
     await db('users').insert({
       name,
@@ -27,7 +31,7 @@ export default class UsersController {
       date_of_birth,
       cell_phone,
       email,
-      password
+      password: hash
     })
  
     return response.json({ success: true })
