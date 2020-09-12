@@ -8,7 +8,8 @@ const routes = express.Router();
 const userscontroller = new UsersController()
 const authController = new AuthController()
 
-routes.get('/users',verifyToken, userscontroller.index)
+routes.get('/users', userscontroller.index)
+routes.get('/user', userscontroller.show)
 routes.post('/users', userscontroller.create)
 
 routes.post('/auth', authController.create)

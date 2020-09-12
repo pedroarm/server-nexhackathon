@@ -13,7 +13,7 @@ export async function up(knex: Knex) {
     table.string('profile_image');
     table.integer('headline');
     table.integer('description');
-    table.integer('points');
+    table.integer('points').defaultTo(0);
     table.string('linkedin');
     table.string('github');
     table.string('instagram');

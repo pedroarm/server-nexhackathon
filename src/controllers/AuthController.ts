@@ -35,10 +35,10 @@ class AuthController {
         instagram: userPass.instagrm
       }, JWT_KEY, {expiresIn: '72h'},(err, token) => {
         if(err) {
-          response.status(400).json({err: 'Desculpe, tivemos um problema interno!'})
+          response.status(401).json({err: 'Desculpe, tivemos um problema interno!'})
         }else{
           response.status(200).json({token: token})
-          console.log(token)
+          response.send(token)
         }
       })
     }
