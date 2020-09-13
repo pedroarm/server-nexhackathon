@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.json())
 app.use(routes)
 
-var port = process.env.PORT || 3333;
+var port : string|number= process.env.PORT || 3333;
 app.listen(port, function() {
   console.log('listening', port);
 })
