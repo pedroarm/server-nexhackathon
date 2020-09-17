@@ -32,7 +32,7 @@ class AuthController {
         points: userPass.points,
         linkedin: userPass.linkedin,
         github: userPass.github,
-        instagram: userPass.instagrm
+        instagram: userPass.instagram
       }, JWT_KEY, {expiresIn: '72h'},(err, token) => {
         if(err) {
           response.status(401).json({err: 'Desculpe, tivemos um problema interno!'})
